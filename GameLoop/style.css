@@ -1,0 +1,465 @@
+/* Variable globale*/
+:root {
+
+    --Globale-font : Arial, Helvetica, sans-serif ;
+    --Globale-size-font : 0.9em;
+
+
+    --Globale-color-border : rgb(0, 0, 0) ;
+    --Globale-background-color-bar: rgb(206, 206, 206);
+    --Globale-color-bar : rgb(239, 255, 10);
+    --Globale-color-bar-2 :rgb(31, 102, 255);
+    --Globale-color-bar-3 :rgb(230, 157, 0);
+    --Globale-color-bar-4 : rgb(196, 196, 196);
+    --Globale-background-color-tooltip : rgb(0,0,0);
+    --Globale-text-color-tooltip : rgb(255,255,255) ;
+}
+
+/* Remise a zero */
+
+*{
+    padding: 0px;
+    margin: 0px;
+    cursor: default;
+}
+
+/* conteneur-energy-bar*/
+
+#conteneur-energy-bar {
+    height: 40px;
+}
+
+.energy-bar {
+    height: 15px ;
+    box-sizing: border-box;
+    border: 1px solid var(--Globale-color-border);
+}
+
+.energy-bar div {
+    background-color: var(--Globale-color-bar);
+    margin: auto;
+    height: 100%;
+
+}
+
+.info-energy-bar {
+    height: 28px;
+    text-align: center;
+    background-color: rgb(241, 241, 241);
+}
+
+.info-energy-bar div {
+   
+    padding-left: 10px;
+    padding-top: 5px;
+    text-align: center;
+    display: inline-block;
+   
+}
+.info-energy-bar div * {
+    
+    display: inline-block; 
+    font-size: var(--Globale-size-font) ; 
+    font-family: var(--Globale-font);
+
+}
+
+/* conteneur */
+
+#conteneur {
+    padding: 5px;
+    display: grid;
+
+    grid-template-columns: 11.5% 30% auto;
+    grid-template-rows: 95% auto;
+    grid-template-areas: 
+    "conteneur-states conteneur-action-run conteneur-action-select"
+    "conteneur-info conteneur-info conteneur-info"
+    ;
+    grid-gap: 5px;
+
+}
+
+.conteneur-states {
+    grid-area: conteneur-states ;
+}
+.conteneur-action-run {
+    grid-area: conteneur-action-run ;
+}
+.conteneur-action-select {
+    grid-area: conteneur-action-select ;
+}
+
+.conteneur-info {
+    grid-area: conteneur-info;
+}
+
+/*.conteneur-states */
+
+.conteneur-states fieldset {
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+.conteneur-states fieldset legend {
+    margin-left:10px;
+    font-size: var(--Globale-size-font) ; 
+    font-family: var(--Globale-font);
+}
+
+.grill-states {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 50% auto ;
+    grid-template-rows: auto auto ;
+    grid-template-areas:
+    "name loop-states"
+    "bar-loop bar-loop" 
+    ;
+}
+
+.grill-states .name {
+    grid-area: name ;
+    font-size: var(--Globale-size-font) ; 
+    font-family: var(--Globale-font);
+}
+.grill-states .loop-states {
+    text-align: center;
+    grid-area:loop-states;
+    font-size: var(--Globale-size-font) ; 
+    font-family: var(--Globale-font);
+}
+
+
+.grill-skills {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "name loop-states game-states" 
+    "bar-loop bar-loop bar-loop"
+    "bar-game bar-game bar-game"
+    ;
+}
+
+.grill-skills .loop-states {
+    text-align: center;
+    grid-area: loop-states;
+    font-size: var(--Globale-size-font) ; 
+    font-family: var(--Globale-font);
+}
+.grill-skills .game-states {
+    text-align: center;
+    grid-area: game-states;
+    font-size: var(--Globale-size-font) ; 
+    font-family: var(--Globale-font);
+}
+
+.grill-skills .name {
+    grid-area: name ;
+    font-size: var(--Globale-size-font) ; 
+    font-family: var(--Globale-font);
+}
+
+.grill-equipements p {
+    padding: 2px;
+    font-size: var(--Globale-size-font) ; 
+    font-family: var(--Globale-font);
+}
+
+
+.conteneur-bar {
+    grid-area: bar-loop;
+    width: 100%;
+    height: 5px;
+    background-color: var(--Globale-background-color-bar);
+    /* border: 0.1px solid var(--Globale-color-border) ; */
+}
+
+.conteneur-bar div {
+    width: 100%;
+    height: 100%;
+    background-color: var(--Globale-color-bar-2);
+   
+}
+
+.conteneur-bar-2 {
+    grid-area: bar-game;
+    width: 100%;
+    height: 5px;
+    background-color: var(--Globale-background-color-bar);
+    /* border: 0.1px solid var(--Globale-color-border) ; */
+}
+
+.conteneur-bar-2 div{
+    width: 100%;
+    height: 100%;
+    background-color: var(--Globale-color-bar-3);
+}
+
+.equipements {
+    cursor: default;
+    text-align: center;
+    font-size: var(--Globale-size-font); 
+    font-family: var(--Globale-font);
+}
+.objets {
+    cursor: default;
+    text-align: center;
+    font-size: var(--Globale-size-font); 
+    font-family: var(--Globale-font);
+}
+
+
+/* conteneur-action-run */
+
+.conteneur-action-run {
+    display:grid;
+    grid-template-columns: 150px auto;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    grid-template-areas: "action loop" ;
+}
+
+
+.conteneur-action-run fieldset {
+   
+    margin-top: 8px;
+    overflow-y: auto ;
+    overflow-x: hidden ;
+    height: 509px;
+    border-radius: 5px;
+    
+    
+}
+
+
+.action {
+    
+    grid-area: action;
+    width: 100%;
+    position: relative;
+
+}
+
+
+
+.loop {
+    grid-area: loop;
+}
+
+.conteneur-action-run fieldset legend {
+    margin-left:10px;
+    font-size: var(--Globale-size-font) ; 
+    font-family: var(--Globale-font);
+    
+}
+
+
+/* Scrollbar */
+
+.scrollbar-make::-webkit-scrollbar {
+    background: transparent; 
+    width:5px;
+}
+
+.scrollbar-make::-webkit-scrollbar-track {
+    
+    padding: 2px 0;
+    background-color: transparent;
+}
+  
+  
+.scrollbar-make::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: rgb(209, 209, 209) ;
+   
+}
+
+
+.scrollbar-make-html::-webkit-scrollbar {
+    background: transparent; 
+    width:10px;
+}
+
+.scrollbar-make-html::-webkit-scrollbar-track {
+    
+    padding: 2px 0;
+    background-color: transparent;
+}
+  
+  
+.scrollbar-make-html::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: rgb(212, 212, 212) ;
+    position:relative; 
+}
+
+
+/* Conterner tache*/
+
+.conteneur-tache {
+
+    border-bottom: 0.1px solid black;
+
+    display:grid;
+   
+    grid-template-columns: 12px 20px 20px auto;
+    grid-template-rows: auto;
+    grid-gap: auto;
+    grid-template-areas: "img nomber-tache max-tache name-tache";
+
+    
+    padding: 5px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.conteneur-tache img {
+   
+    grid-area: img;
+}
+
+.nomber-tache {
+    grid-area:nomber-tache;
+    text-align: right;
+    height: 100% ;
+    font-family: var(--Globale-font);
+    font-size: calc( var(--Globale-size-font) - 0.1em )  ; 
+}
+
+.max-tache {
+    grid-area:max-tache;
+    text-align:left;
+    height: 100% ;
+    font-family: var(--Globale-font);
+    font-size: calc( var(--Globale-size-font) - 0.1em )  ; 
+   
+}
+
+.name-tache {
+    grid-area:name-tache;
+    word-wrap: break-word;
+    margin: auto;
+    height: 100% ;
+    font-size: calc( var(--Globale-size-font) - 0.1em )  ; 
+    font-family: var(--Globale-font);
+}
+
+.bar-tache {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: var( --Globale-color-bar-4);
+    left: 0px;
+    bottom: 0px;
+
+   
+    z-index : -1 ;
+}
+
+
+/* tooltip */
+
+.tooltip {
+    font-family: var(--Globale-font);
+    font-size: calc( var(--Globale-size-font) - 0.1em )  ; 
+    position:fixed;
+    visibility:hidden;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    
+    max-width: 200px ; 
+    opacity : 0 ;
+    transition: visibility 1s linear 400ms, opacity 400ms linear;
+    z-index: 1;
+}
+
+.conteneur-tooltip:hover  .tooltip {
+    visibility:visible;
+    opacity : 1 ;
+    /* ne touche pas a ca /!\ ou tu nique tous */
+}
+
+.conteneur-loop {
+
+    display:grid;
+   
+    /* icon , name , up , nombre, down, delete       */
+    grid-template-columns: 20px auto 16px 20px 20px 20px ;
+    grid-template-rows: auto;
+    grid-gap: auto;
+    grid-template-areas: "img name up nombre down delete";
+
+    
+    padding: 4px 0px 0px 0px;
+    position: relative;
+    box-sizing: border-box;
+
+}
+
+.conteneur-loop .loop-icon {
+    grid-area: img
+}
+
+.loop-name {
+    font-size: calc( var(--Globale-size-font) - 0.1em )  ; 
+    font-family: var(--Globale-font);
+    grid-area: name ;
+}
+.loop-up {
+    grid-area: up ;
+}
+.loop-nombre {
+    font-size: calc( var(--Globale-size-font) - 0.1em )  ; 
+    font-family: var(--Globale-font);
+    text-align: center;
+    grid-area: nombre;
+}
+.loop-down {
+    grid-area: down ;
+}
+.loop-delete {
+    grid-area: delete ;
+}
+
+.button {
+
+    
+    border: 2px ridge rgb(158, 158, 158);
+    border-radius: 8px;
+   
+    padding: 7px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: auto;
+
+    
+
+}
+
+.button p {
+    cursor: pointer;
+    font-size: calc( var(--Globale-size-font) )  ; 
+    font-family: var(--Globale-font);
+}
+
+.button:active  {
+    background-color:rgb(170, 170, 170);
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }

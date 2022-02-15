@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr" class="scrollbar-make-html">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="data.js"></script>
+    <script src="works.js"></script>
+    <script src="script.js"></script>
+</head>
+<body >
+
+    <div id = "conteneur-energy-bar">
+        <div class = "energy-bar"> <div></div></div>
+        <div class = "info-energy-bar"> 
+            <div>
+                <p>Énergie : </p>
+                <p class="info-energiy-data">20</p>
+            </div>
+            <div>
+                <p>Food : </p>
+                <p class="info-energiy-data">20</p>
+            </div>
+            <div> 
+                <p>Gold : </p>
+                <p class="info-energiy-data">20</p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div id="conteneur">
+        <div class="conteneur-states">
+
+            <!-- States du perso -->
+            <fieldset class="states">
+                <legend>States</legend>
+                <div class="grill-states HP">
+                    <p class="name">PV</p>
+                    <p class="loop-states">100</p>
+                    <div class="conteneur-bar"> <div></div></div>
+                </div>
+            </fieldset>
+
+
+            <!-- Skilles du perso -->
+            <fieldset class="skilles">
+                <legend>Skills</legend>
+
+                <div class="grill-skills constitution">
+                    <p class="name">Constitution</p>
+                    <p class="loop-states">0</p>
+                    <p class="game-states">0</p>
+                    <div class="conteneur-bar"> <div></div></div>
+                    <div class="conteneur-bar-2"> <div></div></div>
+                </div>
+                <div class="grill-skills force">
+                    <p class="name">Force</p>
+                    <p class="loop-states">0</p>
+                    <p class="game-states">0</p>
+                    <div class="conteneur-bar"> <div></div></div>
+                    <div class="conteneur-bar-2"> <div></div></div>
+                </div>
+                <div class="grill-skills defense">
+                    <p class="name">Défense</p>
+                    <p class="loop-states">0</p>
+                    <p class="game-states">0</p>
+                    <div class="conteneur-bar"> <div></div></div>
+                    <div class="conteneur-bar-2"> <div></div></div>
+                </div>
+                <div class="grill-skills intelligence">
+                    <p class="name">Intelligence</p> 
+                    <p class="loop-states">0</p>
+                    <p class="game-states">0</p>
+                    <div class="conteneur-bar"> <div></div></div>
+                    <div class="conteneur-bar-2"> <div></div></div>
+                </div>
+                <div class="grill-skills agilite">
+                    <p class="name">Agilité</p>
+                    <p class="loop-states">0</p>
+                    <p class="game-states">0</p>
+                    <div class="conteneur-bar"> <div></div></div>
+                    <div class="conteneur-bar-2"> <div></div></div>
+                </div>
+                <div class="grill-skills charisme">
+                    <p class="name">Charisme</p>
+                    <p class="loop-states">0</p>
+                    <p class="game-states">0</p>
+                    <div class="conteneur-bar"> <div></div></div>
+                    <div class="conteneur-bar-2"> <div></div> </div>
+                </div>
+                <div class="grill-skills volonte">
+                    <p class="name">Volonté</p>
+                    <p class="loop-states">0</p>
+                    <p class="game-states">0</p>
+                    <div class="conteneur-bar"> <div></div></div>
+                    <div class="conteneur-bar-2"> <div></div></div>
+                </div>
+
+            </fieldset>
+
+            <!-- Equipements du perso -->
+
+            <fieldset class="equipements conteneur-tooltip">
+                <p>Equipements</p>
+
+                <fieldset class="tooltip">
+                    <div class="grill-equipements casque">
+                        <p>Casque : </p>
+                    </div>
+                    <div class="grill-equipements plastron">
+                        <p>Plastron : </p>
+                    </div>
+                    <div class="grill-equipements jambières">
+                        <p>Jambières : </p>
+                    </div>
+                    <div class="grill-equipements gantelet">
+                        <p>Gantelet : </p>
+                    </div>
+                    <div class="grill-equipements arme-1">
+                        <p>Arme 1 : </p>
+                    </div>
+                    <div class="grill-equipements arme-2">
+                        <p>Arme 2 : </p>
+                    </div>
+                    <div class="grill-equipements bracelet">
+                        <p>Bracelet : </p>
+                    </div>
+                    <div class="grill-equipements collier">
+                        <p>Collier : </p>
+                    </div>
+                </fieldset>
+            </fieldset>
+            
+            <fieldset class="objets conteneur-tooltip">
+
+                <p> Objets </p>
+
+                <fieldset class="tooltip">
+                    
+                </fieldset>
+            </fieldset>
+
+        </div>
+        <div class="conteneur-action-run">
+            <fieldset class="scrollbar-make action ">
+                <legend>Action</legend>
+                <!-- Data taches -->
+                
+            </fieldset>
+
+            <fieldset class="scrollbar-make loop">
+                <legend>Loop</legend>
+                <!-- Data loop -->
+                
+            </fieldset>
+        </div>
+
+        <div class="conteneur-action-select">
+            <div class="conteneur-button"></div>
+        </div>
+        
+
+        <div class="conteneur-info">
+            
+            
+            <fieldset >
+                <legend>Info</legend>
+                <label for="uploadJSON">load Save</label>
+                <label onclick="downloadFileJSON(GameData,'Save')">Download Save</label>
+                
+            </fieldset>
+        </div>
+    </div>
+
+
+
+    <fieldset class="tooltip">
+        <p> tooltip </p>
+    </fieldset>
+
+   
+    
+    <input type="file" name="" id="uploadJSON" accept=".json" style="display : none;">
+    <a id="downloadAnchorElem" style="display:none"></a>
+
+    
+    
+    
+</body>
+</html>
+
+
